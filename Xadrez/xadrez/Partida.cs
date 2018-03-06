@@ -28,7 +28,7 @@ namespace xadrez
             tab.colocarPeca(p, destino);
         }
 
-        private void realizaJogada(Posicao origem, Posicao destino)
+        public void realizaJogada(Posicao origem, Posicao destino)
         {
             executaMovimento(origem, destino);
             turno++;

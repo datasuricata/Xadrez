@@ -38,7 +38,7 @@ namespace Xadrez
                         Posicao destino = Tela.lerPosicaoXadrez().ToPosicao();
                         partida.validarPosicaoDestino(origem, destino);
 
-                        partida.executaMovimento(origem, destino);
+                        partida.realizaJogada(origem, destino);
                     }
 
                     catch (TabuleiroException e)
