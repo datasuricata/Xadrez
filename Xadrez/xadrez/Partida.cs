@@ -33,7 +33,7 @@ namespace xadrez
             tab.colocarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('c',1).ToPosicao());
             tab.colocarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('a', 2).ToPosicao());
             tab.colocarPeca(new Rei(tab, Cor.Branca), new PosicaoXadrez('d', 5).ToPosicao());
-            tab.colocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('a', 6).ToPosicao());
+            tab.colocarPeca(new  Torre(tab, Cor.Branca), new PosicaoXadrez('a', 6).ToPosicao());
         }
     }
 }
