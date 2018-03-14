@@ -142,7 +142,7 @@ namespace xadrez
             if (estaEmXeque(jogadorAtual))
             {
                 desfazMovimento(origem, destino, pecaCaputrada);
-                throw new TabuleiroException("Você não pode se colocar em xeque!");
+                throw new TabuleiroException("Erro -> Não autorizado. Você não pode se por em Xeque!");
             }
 
             Peca p = tab.peca(destino);
@@ -197,16 +197,20 @@ namespace xadrez
         {
             if (tab.peca(pos) == null)
             {
-                throw new TabuleiroException("Não existe peça na posição escolhida");
+                throw new TabuleiroException("Erro -> Não existe peça na posição escolhida!");
             }
             if (jogadorAtual != tab.peca(pos).cor)
             {
-                throw new TabuleiroException("A peça escolhida não é sua");
+                throw new TabuleiroException("Erro -> Não autorizado. A peça escolhida não é a sua!");
             }
             if (!tab.peca(pos).existeMovimentosPossiveis())
             {
-                throw new TabuleiroException("Não há movimentos Possiveis");
-            }            
+                throw new TabuleiroException("Erro -> Não autorizado. Não há movimentos possíveis!");
+            }
+            if (tab.peca(pos).movimentoPossivel(pos))
+            {
+                throw new TabuleiroException("Erro");
+            }
 
         }
 
@@ -214,7 +218,7 @@ namespace xadrez
         {
             if (!tab.peca(origem).movimentoPossivel(destino))
             {
-                throw new TabuleiroException("Posição de destino inváçida");
+                throw new TabuleiroException("Erro -> Posição de destino inválida");
             }
         }
 
@@ -279,7 +283,7 @@ namespace xadrez
             Peca R = rei(cor);
             if (R == null)
             {
-                throw new TabuleiroException("Não tem rei da cor <" + cor + "> no tabuleiro!");
+                throw new TabuleiroException("Erro -> Não há rei da cor <" + cor + "> no tabuleiro!");
             }
 
             foreach (Peca x in pecasNoTabuleiro(adversaria(cor)))

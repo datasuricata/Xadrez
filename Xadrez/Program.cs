@@ -20,7 +20,7 @@ namespace Xadrez
                         Tela.imprimirPartida(partida);
 
                         Console.WriteLine();
-                        Console.Write("Origem: ");
+                        Console.Write("Posição de Origem: ");
                         Posicao origem = Tela.lerPosicaoXadrez().ToPosicao();
                         partida.validarPosicaodeOrigem(origem);
 
@@ -30,7 +30,7 @@ namespace Xadrez
                         Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
 
                         Console.WriteLine();
-                        Console.Write("Destino: ");
+                        Console.Write("Posição de Destino: ");
                         Posicao destino = Tela.lerPosicaoXadrez().ToPosicao();
                         partida.validarPosicaoDestino(origem, destino);
 

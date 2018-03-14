@@ -33,7 +33,7 @@
         {
             if (existePeca(pos))
             {
-                throw new TabuleiroException("Já existe uma peça nesta posição!");
+                throw new TabuleiroException("Erro -> Não autorizado. Já existe uma peça nesta posição!");
             }
             pecas[pos.linha, pos.coluna] = p; ;
             p.posicao = pos;
@@ -65,7 +65,7 @@
         {
             if (!posicaoValida(pos))
             {
-                throw new TabuleiroException("Posição inválida!");
+                throw new TabuleiroException("Erro -> Não autorizado. Posição inválida!");
             }
         }
     }
