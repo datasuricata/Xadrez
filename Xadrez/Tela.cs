@@ -1,7 +1,7 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System;
 using tabuleiro;
-using xadrez;
-using System.Collections.Generic;
+
 
 namespace xadrez
 {
@@ -15,15 +15,20 @@ namespace xadrez
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
             Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+
+            if (partida.xeque)
+            {
+                Console.WriteLine("XEQUE");
+            }
         }
 
         public static void imprimirPecasCapturadas(Partida partida)
         {
             Console.WriteLine("Peças Capturadas");
-            Console.Write("Brancas: ");
+            Console.Write("Pelo jogador Branco: ");
             imprimirConjunto(partida.pecasCaputradas(Cor.Branca));
             Console.WriteLine();
-            Console.Write("Pretas: ");
+            Console.Write("Pelo jogador Preto: ");
             ConsoleColor aux = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Yellow;
             imprimirConjunto(partida.pecasCaputradas(Cor.Preta));
@@ -41,6 +46,7 @@ namespace xadrez
 
             Console.Write("]");
         }
+
 
         public static void imprimirTabuleiro(Tabuleiro tab)
         {
